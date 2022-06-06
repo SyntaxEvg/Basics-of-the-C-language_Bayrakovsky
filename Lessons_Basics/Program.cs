@@ -145,8 +145,8 @@ namespace Seminar
             Console.WriteLine("Имя фамилия: " + name + " "
                 + lastName + ". Возраст {0}, рост {1:F2}, вес {2:F2}",
                 age, growth, weight);
-            Console.WriteLine($"Хочешь покажу результат? Тебя зовут: {name} {lastName} " +
-                $"Рост у тебя: {growth} вес: {weight}");
+            Console.WriteLine($"Тебя зовут: {name} {lastName} " +
+                $"Твой рост: {growth} вес: {weight}");
         }
     }
 
