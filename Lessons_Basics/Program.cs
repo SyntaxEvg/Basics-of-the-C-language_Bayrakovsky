@@ -23,6 +23,7 @@ namespace Seminar
         static async Task Main(string[] args)
         {
             Console.WriteLine("Выбрать задания от 1 до 1 или 6- если хотите выйти из программы");
+            Console.WriteLine("3 урок- цифра 7");
             while (true)
             {
                 var temp = Console.ReadLine();
@@ -48,14 +49,15 @@ namespace Seminar
                         case 6:
                             Environment.Exit(0);
                             break;
+                        case 7:
+                            new Sample03().Main() ;
+                            break;
                         default:
                             break;
                     }
                 }
 
             }
-
-
             Console.ReadLine();
         }
 
