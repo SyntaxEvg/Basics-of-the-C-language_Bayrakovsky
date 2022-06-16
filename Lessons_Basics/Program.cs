@@ -1,4 +1,5 @@
 ﻿using Lessons_Basics.Lesson4;
+using Lessons_Basics.Lesson5;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace Seminar
             Console.WriteLine("Выбрать задания от 1 до 1 или 6- если хотите выйти из программы");
             Console.WriteLine("3 урок- цифра 7");
             Console.WriteLine("4 урок- цифра 8");
+            Console.WriteLine("5 урок- цифра 9");
             while (true)
             {
                 var temp = Console.ReadLine();
@@ -56,6 +58,9 @@ namespace Seminar
                             break;
                         case 8:
                             new Sample04().Main();
+                            break;
+                        case 9:
+                            new Sample05().ListStudents();
                             break;
                         default:
                             break;
