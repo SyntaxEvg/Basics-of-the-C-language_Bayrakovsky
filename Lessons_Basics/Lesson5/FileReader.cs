@@ -24,7 +24,7 @@ namespace Lessons_Basics.Lesson5
                 StreamReader = new StreamReader(path);
                 return;
             }
-            new Exception("error File.Exists");
+            throw new Exception("error File.Exists");
         }
         public  IEnumerable<string>GetLine()
         {

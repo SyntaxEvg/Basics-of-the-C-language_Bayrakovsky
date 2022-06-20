@@ -10,7 +10,7 @@ namespace Lessons_Basics.Lesson5
 {
     internal class Sample05
     {
-        Func<string, int> StringParse = x => int.TryParse(x, out int assessment1) ? assessment1 : new int();
+        readonly Func<string, int> StringParse = x => int.TryParse(x, out int assessment1) ? assessment1 : new int();
 
         //Converter<string, uint> convertuint = d => Convert.ToUInt32(d);
 
@@ -34,11 +34,10 @@ namespace Lessons_Basics.Lesson5
             Console.WriteLine("Задача ЕГЭ.На вход программе подаются сведения о сдаче экзаменов учениками 9-х классов");
             string path = @"Students.txt";
             var stream= new FileReader(path);
-            bool flag = true; //так как у нас есть первая строка отличающая от остальных возьмем бул нужен чтобы не нагружать алгоритм
+            bool flag = true; 
             int CountSt = 0;
             var student =new Students();
-            //var builder = ImmutableList.CreateBuilder<Students>(); // returns ImmutableList.Builder
-            foreach (string item in  stream.GetLine())
+             foreach (string item in  stream.GetLine())
             {
                 if (flag && int.TryParse(item,out var count) && count >0 )
                 {
@@ -58,13 +57,6 @@ namespace Lessons_Basics.Lesson5
                     student1.assessments[0] = StringParse(splitstr[2]);
                     student1.assessments[1] = StringParse(splitstr[3]);
                     student1.assessments[2] = StringParse(splitstr[4]);
-                    //student1.assessment.Add(new Assessment
-                    //{
-                    //    assessment1 = StringParse(splitstr[2]),
-                    //    assessment2 = StringParse(splitstr[3]),
-                    //    assessment3 = StringParse(splitstr[4]),
-                    //});
-                    var s =student1.Average;
                     student.GetStudents.Add(student1);
                 }
 
