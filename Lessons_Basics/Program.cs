@@ -1,5 +1,6 @@
 ﻿using Lessons_Basics.Lesson4;
 using Lessons_Basics.Lesson5;
+using Lessons_Basics.Lesson6;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,6 +29,7 @@ namespace Seminar
             Console.WriteLine("3 урок- цифра 7");
             Console.WriteLine("4 урок- цифра 8");
             Console.WriteLine("5 урок- цифра 9");
+            Console.WriteLine("6 урок- цифра 10");
             while (true)
             {
                 var temp = Console.ReadLine();
@@ -61,6 +63,9 @@ namespace Seminar
                             break;
                         case 9:
                             new Sample05().ListStudents();
+                            break;
+                        case 10:
+                            new Sample06().MinValue();
                             break;
                         default:
                             break;
