@@ -26,6 +26,8 @@ namespace Lesson7
     {
         public static Func<int, Result> ComparerDel;
 
+        public string UserName { get; set; }
+
         private static int hiddenNumber;
 
         public static int HiddenNumber
@@ -104,7 +106,7 @@ namespace Lesson7
                     }
                     else
                     {
-                        listBox1.Items.Add($"Кол-во попыток: {++attempts} : {textNumb.Text}");
+                        listBox1.Items.Add($"{UserName} - кол-во попыток: {++attempts} : {textNumb.Text}");
                     }
 
                 }            
@@ -144,6 +146,16 @@ namespace Lesson7
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Form TextBlockForm = new Form();
+            StartForm.CreatForms(ref TextBlockForm);//создание типовых форм
+           
+           
+            TextBlockForm.ShowDialog();
+            // TextBlockForm.
+            UserName = TextBlockForm.Controls["TextUserName"].Text;
+            MessageBox.Show($"Ваше имя: {UserName}");
+            TextBlockForm.Close();
+
             attempts = 0;
             button1.Text = "Game start";
             button1.Enabled = false;
@@ -152,6 +164,14 @@ namespace Lesson7
             Random rnd = new Random();
             HiddenNumber = rnd.Next(1, 100);
             this.Text = $"Угадай число, Загадано: {HiddenNumber}";
+
+
+
+        }
+
+        private void textNumb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

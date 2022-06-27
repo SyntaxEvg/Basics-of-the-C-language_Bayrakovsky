@@ -39,7 +39,8 @@
             // 
             resources.ApplyResources(this.textNumb, "textNumb");
             this.textNumb.Name = "textNumb";
-            this.textNumb.UseWaitCursor = true;
+            this.textNumb.UseWaitCursor = false;
+            this.textNumb.TextChanged += new System.EventHandler(this.textNumb_TextChanged);
             // 
             // button1
             // 
